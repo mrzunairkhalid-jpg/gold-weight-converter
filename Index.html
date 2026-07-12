@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gold Weight Converter</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      background:#f8f5ec;
+      max-width:520px;
+      margin:auto;
+      padding:20px;
+    }
+
+    .card{
+      background:#fff;
+      border:2px solid #c9a227;
+      border-radius:14px;
+      padding:16px;
+      margin:18px 0;
+    }
+
+    h1,h2{
+      text-align:center;
+      color:#b8860b;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      margin:6px 0;
+      font-size:17px;
+      border:1px solid #c9a227;
+      border-radius:8px;
+      box-sizing:border-box;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      background:#c9a227;
+      color:#fff;
+      border:0;
+      border-radius:8px;
+      font-size:17px;
+      font-weight:bold;
+    }
+
+    .out{
+      font-weight:bold;
+      margin-top:10px;
+      font-size:18px;
+      color:#333;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Gold Weight Converter</h1>
+
+<div class="card">
+  <h2>Tola / Masha / Ratti → Grams</h2>
+
+  <input id="t" placeholder="Tola" type="number" step="any">
+  <input id="m" placeholder="Masha" type="number" step="any">
+  <input id="r" placeholder="Ratti" type="number" step="any">
+
+  <button onclick="tmr()">Convert</button>
+
+  <div id="a" class="out"></div>
+</div>
+
+<div class="card">
+  <h2>Grams → Tola / Masha / Ratti</h2>
+
+  <input id="g" placeholder="Grams" type="number" step="any">
+
+  <button onclick="gt()">Convert</button>
+
+  <div id="b" class="out"></div>
+</div>
+
+<script>
+const G = 11.664;
+
+function v(id){
+  return parseFloat(document.getElementById(id).value) || 0;
+}
+
+function tmr(){
+  let grams = (v('t') + v('m')/12 + v('r')/96) * G;
+  document.getElementById('a').textContent =
+    "Grams: " + grams.toFixed(3);
+}
+
+function gt(){
+  let x = v('g') / G;
+
+  let t = Math.floor(x);
+  let m0 = (x - t) * 12;
+  let m = Math.floor(m0);
+  let r = (m0 - m) * 8;
+
+  document.getElementById('b').textContent =
+    t + " Tola, " + m + " Masha, " + r.toFixed(3) + " Ratti";
+}
+</script>
+
+</body>
+</html>
