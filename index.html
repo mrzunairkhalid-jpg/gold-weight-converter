@@ -1,197 +1,383 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gold Converter</title>
 
-  <!-- آئی فون ہوم اسکرین کے لیے پکا، چمکدار بلیک اور گولڈ KJ آئیکن لنک -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Gold Converter">
-  
-  <!-- یہ لائیو امیج لنک بالکل تیز اور صاف KJ لوگو دکھائے گا -->
-  <link rel="apple-touch-icon" sizes="180x180" href="https://images2.imgbox.com/fe/26/5oI0V0yK_o.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://images2.imgbox.com/fe/26/5oI0V0yK_o.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f8f5ec;
-      max-width:520px;
-      margin:auto;
-      padding:20px;
-    }
+<title>Khalid Jewellers - Gold Converter</title>
 
-    .brand-header {
-      text-align: center;
-      margin-top: 10px;
-      margin-bottom: -5px;
-    }
+<!-- iPhone App -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Gold Converter">
 
-    .brand-logo {
-      font-size: 42px;
-      background: #c9a227;
-      color: #fff;
-      width: 70px;
-      height: 70px;
-      line-height: 70px;
-      border-radius: 50%;
-      margin: 0 auto 10px auto;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      letter-spacing: 1px;
-    }
+<link rel="apple-touch-icon"
+href="https://raw.githubusercontent.com/mrzunairkhalid-jpg/gold-weight-converter/refs/heads/main/BB1D3160-126D-4CB5-8720-3C727001BBF1.png">
 
-    .brand-name {
-      font-size: 32px;
-      font-weight: 900;
-      color: #b8860b;
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    }
+<link rel="icon"
+href="https://raw.githubusercontent.com/mrzunairkhalid-jpg/gold-weight-converter/refs/heads/main/BB1D3160-126D-4CB5-8720-3C727001BBF1.png">
 
-    .card{
-      background:#fff;
-      border:2px solid #c9a227;
-      border-radius:14px;
-      padding:16px;
-      margin:18px 0;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
+<style>
 
-    h1 {
-      text-align:center;
-      color:#666;
-      font-size: 18px;
-      font-weight: normal;
-      margin-top: 5px;
-      margin-bottom: 25px;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-    h2 {
-      text-align:center;
-      color:#b8860b;
-      font-size: 20px;
-      margin-top: 5px;
-    }
+body{
 
-    input{
-      width:100%;
-      padding:12px;
-      margin:6px 0;
-      font-size:17px;
-      border:1px solid #c9a227;
-      border-radius:8px;
-      box-sizing:border-box;
-      background: #fdfbfa;
-    }
+background:linear-gradient(180deg,#0d0d0d,#1b1b1b);
 
-    button{
-      width:100%;
-      padding:12px;
-      background:#c9a227;
-      color:#fff;
-      border:0;
-      border-radius:8px;
-      font-size:17px;
-      font-weight:bold;
-      cursor: pointer;
-      margin-top: 5px;
-    }
+padding:20px;
 
-    button:active {
-      background: #b8860b;
-    }
+color:white;
 
-    .out{
-      font-weight:bold;
-      margin-top:12px;
-      font-size:18px;
-      color:#222;
-      text-align: center;
-      background: #fdfbe7;
-      padding: 8px;
-      border-radius: 6px;
-    }
+max-width:520px;
 
-    .footer {
-      text-align: center;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      font-size: 15px;
-      color: #333;
-      font-weight: bold;
-      font-family: Arial, sans-serif;
-      letter-spacing: 0.5px;
-    }
-  </style>
+margin:auto;
+
+}
+
+.header{
+
+text-align:center;
+
+margin-top:15px;
+
+margin-bottom:25px;
+
+}
+
+.logo{
+
+width:110px;
+
+height:110px;
+
+margin:auto;
+
+border-radius:25px;
+
+overflow:hidden;
+
+box-shadow:0 0 25px rgba(212,175,55,.5);
+
+border:3px solid #D4AF37;
+
+}
+
+.logo img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.brand{
+
+margin-top:15px;
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#D4AF37;
+
+letter-spacing:1px;
+
+}
+
+.subtitle{
+
+margin-top:8px;
+
+font-size:18px;
+
+color:#dddddd;
+
+}
+
+.card{
+
+background:#171717;
+
+border:2px solid #D4AF37;
+
+border-radius:20px;
+
+padding:20px;
+
+margin-top:25px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.card h2{
+
+text-align:center;
+
+color:#D4AF37;
+
+margin-bottom:18px;
+
+font-size:22px;
+
+}
+
+input{
+
+width:100%;
+
+padding:14px;
+
+margin:8px 0;
+
+border-radius:12px;
+
+border:1px solid #D4AF37;
+
+background:#0f0f0f;
+
+color:white;
+
+font-size:18px;
+
+outline:none;
+
+}
+button{
+
+width:100%;
+
+padding:15px;
+
+margin-top:15px;
+
+border:none;
+
+border-radius:12px;
+
+background:linear-gradient(180deg,#FFD700,#B8860B);
+
+color:#111;
+
+font-size:19px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.02);
+
+box-shadow:0 0 15px rgba(255,215,0,.5);
+
+}
+
+.out{
+
+display:none;
+
+margin-top:18px;
+
+padding:15px;
+
+border-radius:12px;
+
+background:#0d0d0d;
+
+border:1px solid #D4AF37;
+
+font-size:20px;
+
+text-align:center;
+
+color:#FFD700;
+
+font-weight:bold;
+
+}
+
+.footer{
+
+text-align:center;
+
+margin-top:35px;
+
+color:#bbb;
+
+font-size:15px;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div class="brand-header">
-  <div class="brand-logo">KJ</div>
-  <h2 class="brand-name">Khalid Jewellers</h2>
+<div class="header">
+
+<div class="logo">
+
+<img src="https://raw.githubusercontent.com/mrzunairkhalid-jpg/gold-weight-converter/refs/heads/main/BB1D3160-126D-4CB5-8720-3C727001BBF1.png">
+
 </div>
 
-<h1>Gold Weight Converter</h1>
+<div class="brand">
 
-<div class="card">
-  <h2>Tola / Masha / Ratti → Grams</h2>
+Khalid Jewellers
 
-  <input id="t" placeholder="Tola" type="number" step="any">
-  <input id="m" placeholder="Masha" type="number" step="any">
-  <input id="r" placeholder="Ratti" type="number" step="any">
+</div>
 
-  <button onclick="tmr()">Convert</button>
+<div class="subtitle">
 
-  <div id="a" class="out" style="display:none;"></div>
+Gold Weight Converter
+
+</div>
+
 </div>
 
 <div class="card">
-  <h2>Grams → Tola / Masha / Ratti</h2>
 
-  <input id="g" placeholder="Grams" type="number" step="any">
+<h2>Tola / Masha / Ratti → Grams</h2>
 
-  <button onclick="gt()">Convert</button>
+<input id="t" type="number" placeholder="Enter Tola">
 
-  <div id="b" class="out" style="display:none;"></div>
+<input id="m" type="number" placeholder="Enter Masha">
+
+<input id="r" type="number" placeholder="Enter Ratti">
+
+<button onclick="tmr()">Convert</button>
+
+<div id="a" class="out"></div>
+
+</div>
+
+<div class="card">
+
+<h2>Grams → Tola / Masha / Ratti</h2>
+
+<input id="g" type="number" placeholder="Enter Grams">
+
+<button onclick="gt()">Convert</button>
+
+<div id="b" class="out"></div>
+
 </div>
 
 <div class="footer">
-    Created by Zunair Khalid
+
+Created by Zunair Khalid
+
 </div>
 
 <script>
+
 const G = 11.664;
 
 function v(id){
-  return parseFloat(document.getElementById(id).value) || 0;
-}
 
+return parseFloat(document.getElementById(id).value)||0;
+
+}
 function tmr(){
-  let grams = (v('t') + v('m')/12 + v('r')/96) * G;
-  let outDiv = document.getElementById('a');
-  outDiv.style.display = "block";
-  outDiv.textContent = "Grams: " + grams.toFixed(3);
+
+let grams=(
+
+v("t")
+
++
+
+(v("m")/12)
+
++
+
+(v("r")/96)
+
+)
+
+*
+
+G;
+
+let out=document.getElementById("a");
+
+out.style.display="block";
+
+out.innerHTML=
+
+"Grams : <b>"
+
++
+
+grams.toFixed(3)
+
++
+
+"</b>";
+
 }
 
 function gt(){
-  let x = v('g') / G;
 
-  let t = Math.floor(x);
-  let m0 = (x - t) * 12;
-  let m = Math.floor(m0);
-  let r = (m0 - m) * 8;
+let x=v("g")/G;
 
-  let outDiv = document.getElementById('b');
-  outDiv.style.display = "block";
-  outDiv.textContent = t + " Tola, " + m + " Masha, " + r.toFixed(3) + " Ratti";
+let t=Math.floor(x);
+
+let m0=(x-t)*12;
+
+let m=Math.floor(m0);
+
+let r=(m0-m)*8;
+
+let out=document.getElementById("b");
+
+out.style.display="block";
+
+out.innerHTML=
+
+"<b>"
+
++
+
+t
+
++
+
+"</b> Tola<br><br><b>"
+
++
+
+m
+
++
+
+"</b> Masha<br><br><b>"
+
++
+
+r.toFixed(3)
+
++
+
+"</b> Ratti";
+
 }
 </script>
 
 </body>
+
 </html>
