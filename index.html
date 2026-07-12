@@ -7,11 +7,41 @@
 
   <style>
     body{
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background:#f8f5ec;
       max-width:520px;
       margin:auto;
       padding:20px;
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: -5px;
+    }
+
+    .brand-logo {
+      font-size: 42px;
+      background: #c9a227;
+      color: #fff;
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      border-radius: 50%;
+      margin: 0 auto 10px auto;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      letter-spacing: 1px;
+    }
+
+    .brand-name {
+      font-size: 32px;
+      font-weight: 900;
+      color: #b8860b;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
 
     .card{
@@ -20,11 +50,23 @@
       border-radius:14px;
       padding:16px;
       margin:18px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
 
-    h1,h2{
+    h1 {
+      text-align:center;
+      color:#666;
+      font-size: 18px;
+      font-weight: normal;
+      margin-top: 5px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
       text-align:center;
       color:#b8860b;
+      font-size: 20px;
+      margin-top: 5px;
     }
 
     input{
@@ -35,6 +77,7 @@
       border:1px solid #c9a227;
       border-radius:8px;
       box-sizing:border-box;
+      background: #fdfbfa;
     }
 
     button{
@@ -46,18 +89,44 @@
       border-radius:8px;
       font-size:17px;
       font-weight:bold;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    button:active {
+      background: #b8860b;
     }
 
     .out{
       font-weight:bold;
-      margin-top:10px;
+      margin-top:12px;
       font-size:18px;
-      color:#333;
+      color:#222;
+      text-align: center;
+      background: #fdfbe7;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: #333;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
 
 <body>
+
+<div class="brand-header">
+  <div class="brand-logo">KJ</div>
+  <h2 class="brand-name">Khalid Jewellers</h2>
+</div>
 
 <h1>Gold Weight Converter</h1>
 
@@ -70,7 +139,7 @@
 
   <button onclick="tmr()">Convert</button>
 
-  <div id="a" class="out"></div>
+  <div id="a" class="out" style="display:none;"></div>
 </div>
 
 <div class="card">
@@ -80,10 +149,10 @@
 
   <button onclick="gt()">Convert</button>
 
-  <div id="b" class="out"></div>
+  <div id="b" class="out" style="display:none;"></div>
 </div>
 
-<div style="text-align: center; margin-top: 20px; font-size: 14px; color: #666; font-family: Arial, sans-serif;">
+<div class="footer">
     Created by Zunair Khalid
 </div>
 
@@ -96,8 +165,9 @@ function v(id){
 
 function tmr(){
   let grams = (v('t') + v('m')/12 + v('r')/96) * G;
-  document.getElementById('a').textContent =
-    "Grams: " + grams.toFixed(3);
+  let outDiv = document.getElementById('a');
+  outDiv.style.display = "block";
+  outDiv.textContent = "Grams: " + grams.toFixed(3);
 }
 
 function gt(){
@@ -108,8 +178,9 @@ function gt(){
   let m = Math.floor(m0);
   let r = (m0 - m) * 8;
 
-  document.getElementById('b').textContent =
-    t + " Tola, " + m + " Masha, " + r.toFixed(3) + " Ratti";
+  let outDiv = document.getElementById('b');
+  outDiv.style.display = "block";
+  outDiv.textContent = t + " Tola, " + m + " Masha, " + r.toFixed(3) + " Ratti";
 }
 </script>
 
