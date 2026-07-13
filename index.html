@@ -7,16 +7,19 @@
 
 <title>Khalid Jewellers - Gold Converter</title>
 
-<!-- iPhone App -->
+<meta name="theme-color" content="#0d0d0d">
+
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="Gold Converter">
 
+<link rel="manifest" href="manifest.json">
+
 <link rel="apple-touch-icon"
-href="https://raw.githubusercontent.com/mrzunairkhalid-jpg/gold-weight-converter/refs/heads/main/BB1D3160-126D-4CB5-8720-3C727001BBF1.png">
+href="BB1D3160-126D-4CB5-8720-3C727001BBF1.png">
 
 <link rel="icon"
-href="https://raw.githubusercontent.com/mrzunairkhalid-jpg/gold-weight-converter/refs/heads/main/BB1D3160-126D-4CB5-8720-3C727001BBF1.png">
+href="BB1D3160-126D-4CB5-8720-3C727001BBF1.png">
 
 <style>
 
@@ -28,198 +31,113 @@ font-family:Arial,sans-serif;
 }
 
 body{
-
 background:linear-gradient(180deg,#0d0d0d,#1b1b1b);
-
 padding:20px;
-
 color:white;
-
 max-width:520px;
-
 margin:auto;
-
 }
 
 .header{
-
 text-align:center;
-
 margin-top:15px;
-
 margin-bottom:25px;
-
 }
 
 .logo{
-
 width:110px;
-
 height:110px;
-
 margin:auto;
-
 border-radius:25px;
-
 overflow:hidden;
-
 box-shadow:0 0 25px rgba(212,175,55,.5);
-
 border:3px solid #D4AF37;
-
 }
 
 .logo img{
-
 width:100%;
-
 height:100%;
-
 object-fit:cover;
-
 }
 
 .brand{
-
 margin-top:15px;
-
 font-size:34px;
-
 font-weight:bold;
-
 color:#D4AF37;
-
 letter-spacing:1px;
-
 }
 
 .subtitle{
-
 margin-top:8px;
-
 font-size:18px;
-
 color:#dddddd;
-
 }
 
 .card{
-
 background:#171717;
-
 border:2px solid #D4AF37;
-
 border-radius:20px;
-
 padding:20px;
-
 margin-top:25px;
-
 box-shadow:0 10px 25px rgba(0,0,0,.35);
-
 }
-
 .card h2{
-
 text-align:center;
-
 color:#D4AF37;
-
 margin-bottom:18px;
-
 font-size:22px;
-
 }
 
 input{
-
 width:100%;
-
 padding:14px;
-
 margin:8px 0;
-
 border-radius:12px;
-
 border:1px solid #D4AF37;
-
 background:#0f0f0f;
-
 color:white;
-
 font-size:18px;
-
 outline:none;
-
 }
+
 button{
-
 width:100%;
-
 padding:15px;
-
 margin-top:15px;
-
 border:none;
-
 border-radius:12px;
-
 background:linear-gradient(180deg,#FFD700,#B8860B);
-
 color:#111;
-
 font-size:19px;
-
 font-weight:bold;
-
 cursor:pointer;
-
 transition:.3s;
-
 }
 
 button:hover{
-
 transform:scale(1.02);
-
 box-shadow:0 0 15px rgba(255,215,0,.5);
-
 }
 
 .out{
-
 display:none;
-
 margin-top:18px;
-
 padding:15px;
-
 border-radius:12px;
-
 background:#0d0d0d;
-
 border:1px solid #D4AF37;
-
 font-size:20px;
-
 text-align:center;
-
 color:#FFD700;
-
 font-weight:bold;
-
 }
 
 .footer{
-
 text-align:center;
-
 margin-top:35px;
-
 color:#bbb;
-
 font-size:15px;
-
 }
 
 </style>
@@ -231,21 +149,15 @@ font-size:15px;
 <div class="header">
 
 <div class="logo">
-
-<img src="https://raw.githubusercontent.com/mrzunairkhalid-jpg/gold-weight-converter/refs/heads/main/BB1D3160-126D-4CB5-8720-3C727001BBF1.png">
-
+<img src="BB1D3160-126D-4CB5-8720-3C727001BBF1.png">
 </div>
 
 <div class="brand">
-
 Khalid Jewellers
-
 </div>
 
 <div class="subtitle">
-
 Gold Weight Converter
-
 </div>
 
 </div>
@@ -253,7 +165,6 @@ Gold Weight Converter
 <div class="card">
 
 <h2>Tola / Masha / Ratti → Grams</h2>
-
 <input id="t" type="number" placeholder="Enter Tola">
 
 <input id="m" type="number" placeholder="Enter Masha">
@@ -279,9 +190,7 @@ Gold Weight Converter
 </div>
 
 <div class="footer">
-
 Created by Zunair Khalid
-
 </div>
 
 <script>
@@ -289,95 +198,123 @@ Created by Zunair Khalid
 const G = 11.664;
 
 function v(id){
-
-return parseFloat(document.getElementById(id).value)||0;
-
+return parseFloat(document.getElementById(id).value) || 0;
 }
+
 function tmr(){
 
-let grams=(
-
-v("t")
-
-+
-
-(v("m")/12)
-
-+
-
+let grams = (
+v("t") +
+(v("m")/12) +
 (v("r")/96)
+) * G;
 
-)
+let out = document.getElementById("a");
 
-*
+out.style.display = "block";
 
-G;
-
-let out=document.getElementById("a");
-
-out.style.display="block";
-
-out.innerHTML=
-
-"Grams : <b>"
-
-+
-
-grams.toFixed(3)
-
-+
-
+out.innerHTML =
+"Grams : <b>" +
+grams.toFixed(3) +
 "</b>";
-
 }
 
 function gt(){
+let x = v("g") / G;
 
-let x=v("g")/G;
+let t = Math.floor(x);
 
-let t=Math.floor(x);
+let m0 = (x - t) * 12;
 
-let m0=(x-t)*12;
+let m = Math.floor(m0);
 
-let m=Math.floor(m0);
+let r = (m0 - m) * 8;
 
-let r=(m0-m)*8;
+let out = document.getElementById("b");
 
-let out=document.getElementById("b");
+out.style.display = "block";
 
-out.style.display="block";
-
-out.innerHTML=
-
-"<b>"
-
-+
-
-t
-
-+
-
-"</b> Tola<br><br><b>"
-
-+
-
-m
-
-+
-
-"</b> Masha<br><br><b>"
-
-+
-
-r.toFixed(3)
-
-+
-
-"</b> Ratti";
+out.innerHTML =
+"<b>" + t + "</b> Tola<br><br>" +
+"<b>" + m + "</b> Masha<br><br>" +
+"<b>" + r.toFixed(3) + "</b> Ratti";
 
 }
+
+if ("serviceWorker" in navigator) {
+window.addEventListener("load", function () {
+navigator.serviceWorker.register("./sw.js")
+.then(function () {
+console.log("Service Worker Registered");
+})
+.catch(function (err) {
+console.log(err);
+});
+});
+}
+
 </script>
 
 </body>
 
 </html>
+const CACHE_NAME = "gold-converter-v1";
+
+const FILES_TO_CACHE = [
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./BB1D3160-126D-4CB5-8720-3C727001BBF1.png"
+];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(FILES_TO_CACHE);
+    })
+  );
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(
+        keys
+          .filter((key) => key !== CACHE_NAME)
+          .map((key) => caches.delete(key))
+      )
+    )
+  );
+  self.clients.claim();
+});
+
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
+});
+{
+  "name": "Khalid Jewellers Gold Converter",
+  "short_name": "Gold Converter",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "BB1D3160-126D-4CB5-8720-3C727001BBF1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "BB1D3160-126D-4CB5-8720-3C727001BBF1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
